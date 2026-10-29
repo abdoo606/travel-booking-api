@@ -40,6 +40,9 @@ python -m booking.api                            # serves on 0.0.0.0:8000
 
 ## Tests
 
-34 tests: domain invariants, repository transactions (including the
+37 tests: domain invariants, repository transactions (including the
 `sqlite3.IntegrityError` path for duplicate idempotency keys), service rules,
-and the HTTP contract (skipped automatically when Flask is absent).
+and the HTTP contract. The HTTP tests are skipped automatically when Flask is
+absent — CI installs `requirements.txt`, and a dedicated guard fails the build
+if they would ever be skipped there, so a green badge always means every test
+actually ran.
